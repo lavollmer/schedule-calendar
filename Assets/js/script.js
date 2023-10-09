@@ -14,30 +14,57 @@ $(document).ready(function () {
     console.log("click");
     var btnSave = $("textarea").val();
     console.log("btnSave");
-    var toDo = btnSave;
+    //select the div of the hour with the btn
+    var toDo = $("#hour-9").btnSave.val();
     // $("textarea").append("<li>" + btnSave + "<li>");
     //stores btnSave which is the text in local storage
     localStorage.setItem("btnSave", toDo);
     //grabs the btnSave local storage and puts it in a variable
     var itemList = JSON.stringify(localStorage.getItem("btnSave"));
-    console.log("itemList");
-    localStorage.setItem("btnSave", JSON.parse(itemList));
-    // localStorage.getItem("toDo", (toDo));
-    console.log("click");
-
+    console.log(itemList);
+    var listDos = JSON.parse(localStorage.getItem("btnSave"));
+    // localStorage.setItem("btnSave", JSON.parse(itemList));
+    console.log(listDos);
     $("textarea [name = toDo]").val("");
   });
 });
-//
+
+// top of page day and month
+var today = dayjs();
+var dayWeek = today.format('[Today is] dddd, MMM DD [!]');
+$('#currentDay').text(dayWeek);
+
 // TODO: Add code to apply the past, present, or future class to each time
 // block by comparing the id to the current hour. HINTS: How can the id
 // attribute of each time-block be used to conditionally add or remove the
 // past, present, and future classes? How can Day.js be used to get the
 // current hour in 24-hour time?
-//
-// TODO: Add code to get any user input that was saved in localStorage and set
-// the values of the corresponding textarea elements. HINT: How can the id
-// attribute of each time-block be used to do this?
-//
-// TODO: Add code to display the current date in the header of the page.
 
+//setting var hour to military time
+var hourTime = dayjs();
+hourTime.format('00:00:00');
+var timeInMinutes = 60;
+
+
+var hours = [
+  {
+    hour: "00:09:00",
+  },
+  {
+    hour: "00:10:00",
+  }
+]
+
+function timeOfDay() {
+  if (hourTime === hours[0]) {
+    console.log("hi");
+  } if else (hourTime === hours[1]){
+    console.log("yo");
+  }
+  //
+  // TODO: Add code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements. HINT: How can the id
+  // attribute of each time-block be used to do this?
+  //
+  // TODO: Add code to display the current date in the header of the page.
+}
