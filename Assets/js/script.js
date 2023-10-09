@@ -12,20 +12,16 @@ $(document).ready(function () {
   // useful when saving the description in local storage?
   $("#clickBtn").click(function (event) {
     console.log("click");
+    // variable btnSave is equal to the value input in the textarea
     var btnSave = $("textarea").val();
-    console.log("btnSave");
-    //select the div of the hour with the btn
-    var toDo = $("#hour-9").btnSave.val();
-    // $("textarea").append("<li>" + btnSave + "<li>");
-    //stores btnSave which is the text in local storage
-    localStorage.setItem("btnSave", toDo);
+
+    //stores btnSave which is the text in local storage under "info" key
+    localStorage.setItem("info", btnSave);
+
     //grabs the btnSave local storage and puts it in a variable
-    var itemList = JSON.stringify(localStorage.getItem("btnSave"));
-    console.log(itemList);
-    var listDos = JSON.parse(localStorage.getItem("btnSave"));
-    // localStorage.setItem("btnSave", JSON.parse(itemList));
-    console.log(listDos);
-    $("textarea [name = toDo]").val("");
+    JSON.stringify(localStorage.getItem("info"));
+
+    console.log(localStorage.getItem("info"));
   });
 });
 
@@ -41,9 +37,9 @@ $('#currentDay').text(dayWeek);
 // current hour in 24-hour time?
 
 //setting var hour to military time
-var hourTime = dayjs();
-hourTime.format('00:00:00');
+today.format('00:00:00');
 var timeInMinutes = 60;
+console.log(today);
 
 
 var hours = [
@@ -58,7 +54,7 @@ var hours = [
 function timeOfDay() {
   if (hourTime === hours[0]) {
     console.log("hi");
-  } if else (hourTime === hours[1]){
+  } else (hourTime === hours[1]); {
     console.log("yo");
   }
   //
