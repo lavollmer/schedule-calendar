@@ -23,7 +23,7 @@ $(document).ready(function () {
 
   // top of page day and month
   var today = dayjs();
-  var dayWeek = today.format('[Today is] dddd, MMM DD [!] -- HH:mm:ss');
+  var dayWeek = today.format('[Today is] dddd, MMM DD [!]');
   $('#currentDay').text(dayWeek);
 
   // var currentHourState = today.format('HH:mm:ss');
